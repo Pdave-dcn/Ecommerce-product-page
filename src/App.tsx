@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <Navbar />
       <Gallery />
       <Description />
