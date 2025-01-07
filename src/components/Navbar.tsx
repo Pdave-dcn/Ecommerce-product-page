@@ -65,7 +65,7 @@ const Navbar = () => {
 
           {/* Cart */}
           <div
-            className={`${display} absolute left-1/2 -translate-x-[56.666667%] top-[85px] bg-white shadow-lg w-[95.666667%] max-w-md h-auto min-h-[250px] rounded-lg z-[50] flex flex-col justify-center items-center`}
+            className={`${display} absolute left-1/2 -translate-x-[56.666667%] top-[85px] bg-white shadow-lg w-[95.666667%] max-w-sm h-auto min-h-[250px] rounded-lg z-[50] flex flex-col justify-center items-center lg:left-auto //lg:right-1/2 lg:-translate-x-[100%] lg:top-16 lg:shadow-xl`}
           >
             <h1 className="text-xl font-bold text-veryDarkBlue self-start mb-auto border-b border-grayishBlue p-6 w-full">
               Cart
