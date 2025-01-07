@@ -15,18 +15,18 @@ const Navbar = () => {
   };
 
   return (
-    <header className="relative z-[100] w-full">
-      <nav className="flex justify-between items-baseline p-6 bg-white">
-        <div className="flex items-baseline space-x-4">
+    <header className="relative z-[100] lg:z-0 w-full lg:mb-12 p-6 lg:px-28">
+      <nav className="flex justify-between items-baseline bg-white lg:items-center lg:border-b border-grayishBlue lg:pb-8">
+        <div className="flex items-baseline space-x-4 lg:space-x-0">
           <img
-            className="w-4 h-4 cursor-pointer"
+            className="w-4 h-4 cursor-pointer lg:hidden"
             src="images/icon-menu.svg"
             alt="Menu Icon"
             onClick={() => {
               toggleSideBar(true);
             }}
           />
-          <img className="" src="images/logo.svg" alt="Logo" />
+          <img src="images/logo.svg" alt="Logo" />
 
           {/* Overlay when sidebar is open */}
           {isSidebarOpen && (
@@ -35,17 +35,17 @@ const Navbar = () => {
 
           {/* Sidebar on mobile */}
           <div
-            className={`fixed inset-y-0 -left-6 p-7 flex flex-col gap-10 bg-white w-[70%] h-full ${
+            className={`fixed inset-y-0 -left-6 p-7 flex flex-col gap-10 bg-white w-[70%] md:w-[50%] h-full ${
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-            } transition-transform duration-300 ease-in-out`}
+            } transition-transform duration-300 ease-in-out lg:translate-x-0 lg:bg-transparent lg:p-0 lg:w-auto lg:h-auto lg:static`}
           >
             <img
               src="images/icon-close.svg"
               alt="Close icon"
-              className="w-3 cursor-pointer"
+              className="w-3 cursor-pointer lg:hidden"
               onClick={() => toggleSideBar(false)}
             />
-            <div className="flex flex-col gap-5 font-bold text-veryDarkBlue">
+            <div className="flex flex-col gap-5 font-bold text-veryDarkBlue lg:flex-row lg:ml-8 lg:gap-8 lg:font-normal lg:text-darkGrayishBlue">
               <span className="cursor-pointer">Collections</span>
               <span className="cursor-pointer">Men</span>
               <span className="cursor-pointer">Women</span>
@@ -54,6 +54,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
         <div className="flex items-center space-x-6">
           <img
             className="w-6 h-6 cursor-pointer"
@@ -61,6 +62,8 @@ const Navbar = () => {
             alt="Cart Icon"
             onClick={toggleCart}
           />
+
+          {/* Cart */}
           <div
             className={`${display} absolute left-1/2 -translate-x-[56.666667%] top-[85px] bg-white shadow-lg w-[95.666667%] max-w-md h-auto min-h-[250px] rounded-lg z-[50] flex flex-col justify-center items-center`}
           >

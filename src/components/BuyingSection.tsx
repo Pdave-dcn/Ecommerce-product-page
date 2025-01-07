@@ -1,7 +1,7 @@
 const BuyingSection = () => {
   return (
-    <div className="w-full p-6 mb-5">
-      <div className="bg-lightGrayishBlue p-6 flex justify-between items-center rounded-lg mb-4">
+    <div className="w-full p-6 mb-5 lg:flex lg:items-center lg:justify-between">
+      <div className="bg-lightGrayishBlue p-6 lg:p-4 flex justify-between items-center rounded-lg mb-4 lg:mb-0 lg:w-[35%]">
         <button type="button">
           <img src="images/icon-minus.svg" alt="Minus icon" />
         </button>
@@ -12,7 +12,7 @@ const BuyingSection = () => {
           <img src="images/icon-plus.svg" alt="Plus icon" />
         </button>
       </div>
-      <div className="flex bg-orange p-6 justify-center items-center rounded-lg shadow-xl shadow-paleOrange">
+      <div className="flex bg-orange p-6 lg:p-4 justify-center items-center rounded-lg shadow-xl  shadow-paleOrange lg:shadow-none lg:w-[60%]">
         <button type="button">
           <img
             src="images/icon-cart.svg"

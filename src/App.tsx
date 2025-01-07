@@ -7,9 +7,13 @@ const App = () => {
   return (
     <div className="flex flex-col items-center font-kumbhSans">
       <Navbar />
-      <Gallery />
-      <Description />
-      <BuyingSection />
+      <div className="lg:flex">
+        <Gallery />
+        <div className="lg:w-[40%]">
+          <Description />
+          <BuyingSection />
+        </div>
+      </div>
     </div>
   );
 };

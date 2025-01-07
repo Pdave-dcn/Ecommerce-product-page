@@ -1,13 +1,6 @@
 import { useState } from "react";
 
 const Gallery = () => {
-  // const imagesThumbnail: string[] = [
-  //   "image-product-1-thumbnail.jpg",
-  //   "image-product-2-thumbnail.jpg",
-  //   "image-product-3-thumbnail.jpg",
-  //   "image-product-4-thumbnail.jpg",
-  // ];
-
   const images: string[] = [
     "images/image-product-1.jpg",
     "images/image-product-2.jpg",
@@ -30,17 +23,39 @@ const Gallery = () => {
   };
 
   return (
-    <div className="relative z-0 -top-9">
+    <div className="relative z-0 -top-9 lg:top-0 lg:ml-48 lg:mr-20">
       <img
         src={`${images[currentImage]}`}
         alt={`image ${currentImage + 1}`}
-        className="w-full h-auto bg-cover"
+        className="w-full h-auto bg-cover lg:rounded-lg lg:mb-6 lg:w-[350px]"
       />
+      <div className="hidden lg:flex lg:w-auto justify-between">
+        <img
+          src="images/image-product-1-thumbnail.jpg"
+          alt="Thumbnail 1"
+          className="w-16 rounded-lg"
+        />
+        <img
+          src="images/image-product-2-thumbnail.jpg"
+          alt="Thumbnail 2"
+          className="w-16 rounded-lg"
+        />
+        <img
+          src="images/image-product-3-thumbnail.jpg"
+          alt="Thumbnail 3"
+          className="w-16 rounded-lg"
+        />
+        <img
+          src="images/image-product-4-thumbnail.jpg"
+          alt="Thumbnail 4"
+          className="w-16 rounded-lg"
+        />
+      </div>
       <div className="absolute flex items-center justify-between inset-0 px-4">
         <button
           type="button"
           aria-label="Previous Image"
-          className="w-10 h-10 bg-white rounded-full
+          className="w-10 h-10 bg-white rounded-full lg:hidden
           "
           onClick={handlePreviousImage}
         >
@@ -53,7 +68,7 @@ const Gallery = () => {
         <button
           type="button"
           aria-label="Next Image"
-          className="w-10 h-10 bg-white rounded-full"
+          className="w-10 h-10 bg-white rounded-full lg:hidden"
           onClick={handleNextImage}
         >
           <img src="images/icon-next.svg" alt="Next Icon" className="m-auto" />
