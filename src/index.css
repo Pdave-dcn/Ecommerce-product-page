@@ -6,3 +6,13 @@
   filter: brightness(0) saturate(100%) invert(12%) sepia(2%) saturate(2165%)
     hue-rotate(177deg) brightness(96%) contrast(99%);
 }
+
+.close__lightbox {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(70%) saturate(4971%)
+    hue-rotate(346deg) brightness(101%) contrast(103%);
+}
+
+.lightbox__btns:hover .lightbox__nav--btns {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(70%) saturate(4971%)
+    hue-rotate(346deg) brightness(101%) contrast(103%);
+}
