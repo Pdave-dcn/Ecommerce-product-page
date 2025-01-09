@@ -64,9 +64,11 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
               src="images/icon-cart.svg"
               alt="Cart Icon"
             />
-            <div className="absolute -top-[8px] -right-[9px] text-white w-6 h-4 bg-orange flex justify-center items-center text-xs rounded-lg cursor-pointer">
-              {cartQty}
-            </div>
+            {cartQty > 0 && (
+              <div className="absolute -top-[8px] -right-[9px] text-white w-6 h-4 bg-orange flex justify-center items-center text-xs rounded-lg cursor-pointer">
+                {cartQty}
+              </div>
+            )}
           </div>
 
           {/* Cart */}
