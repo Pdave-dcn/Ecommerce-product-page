@@ -11,9 +11,9 @@ const Sneaker = ({ cartQty, setCartQty }: SneakerType) => {
       <img
         src="images/image-product-1-thumbnail.jpg"
         alt="Product thumbnail"
-        className="w-14 rounded-lg"
+        className="w-12 md:w-14 rounded-lg"
       />
-      <div className="text-darkGrayishBlue">
+      <div className="text-darkGrayishBlue text-sm md:text-base">
         <p>Fall Limited Edition Sneakers</p>
         <div>
           <span>$125.00 x {cartQty}</span>

@@ -17,8 +17,8 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
   };
 
   return (
-    <header className="relative z-[100] lg:z-0 w-full lg:mb-12 p-6 lg:px-28">
-      <nav className="flex justify-between items-baseline bg-white lg:items-center lg:border-b border-grayishBlue lg:pb-6">
+    <header className="relative z-[100] lg:z-0 w-full lg:mb-12 lg:p-6 lg:px-28">
+      <nav className="flex justify-between items-baseline bg-white p-4 lg:p-0 lg:items-center lg:border-b border-grayishBlue lg:pb-6">
         <div className="flex items-baseline space-x-4 lg:space-x-0">
           <img
             className="w-4 h-4 cursor-pointer lg:hidden"
@@ -57,10 +57,10 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-5">
           <div className="relative" onClick={toggleCart}>
             <img
-              className="w-6 h-6 cursor-pointer"
+              className="w-5 h-5 lg:w-6 lg:h-6 cursor-pointer"
               src="images/icon-cart.svg"
               alt="Cart Icon"
             />
@@ -73,7 +73,7 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
 
           {/* Cart */}
           <div
-            className={`${display} absolute left-1/2 -translate-x-[56.666667%] top-[85px] bg-white shadow-lg w-[95.666667%] max-w-sm h-auto min-h-[250px] rounded-lg z-[50] flex flex-col justify-between items-center p-6 lg:left-auto lg:-translate-x-[100%] lg:top-16 lg:shadow-xl`}
+            className={`${display} absolute left-1/2 -translate-x-[56.666667%] top-[85px] bg-white shadow-lg w-[95.666667%] max-w-sm h-auto min-h-[250px] rounded-lg z-[50] flex flex-col justify-between items-center p-4 md:p-6 lg:left-auto lg:-translate-x-[100%] lg:top-16 lg:shadow-xl`}
           >
             <h1 className="text-xl font-bold text-veryDarkBlue self-start border-b border-grayishBlue pb-4 w-full">
               Cart
@@ -81,7 +81,7 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
             {cartQty > 0 ? (
               <div className="flex flex-col w-full">
                 <Sneaker cartQty={cartQty} setCartQty={setCartQty} />
-                <button className="bg-orange p-4 font-bold rounded-lg mt-5">
+                <button className="bg-orange p-4 font-bold rounded-lg mt-7 lg:mt-5">
                   Checkout
                 </button>
               </div>
