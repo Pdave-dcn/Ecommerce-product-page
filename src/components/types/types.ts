@@ -15,3 +15,20 @@ export type ThumbnailsType = {
   display: string;
   currentImage: number;
 };
+
+export type BuyingSectionType = {
+  quantity: number;
+  cartQty: number;
+  setQuantity: (value: number) => void;
+  setCartQty: (value: number) => void;
+};
+
+export type NavBarType = {
+  cartQty: number;
+  setCartQty: (value: number) => void;
+};
+
+export type SneakerType = {
+  cartQty: number;
+  setCartQty: (value: number) => void;
+};
