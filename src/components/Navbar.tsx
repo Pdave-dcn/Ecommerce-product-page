@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavBarType } from "./types/types";
 import Sneaker from "./Sneaker";
 
@@ -16,6 +16,18 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
     setIsSidebarOpen(boolean);
   };
 
+  useEffect(() => {
+    if (isSidebarOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isSidebarOpen]);
+
   return (
     <header className="relative z-[100] lg:z-0 w-full lg:mb-12 lg:p-6 lg:px-28">
       <nav className="flex justify-between items-baseline bg-white p-4 lg:p-0 lg:items-center lg:border-b border-grayishBlue lg:pb-6">
@@ -32,12 +44,12 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
 
           {/* Overlay when sidebar is open */}
           {isSidebarOpen && (
-            <div className="fixed inset-0 bg-black opacity-70 transition-opacity"></div>
+            <div className="fixed inset-0 bg-black opacity-70 transition-opacity z-[1] pointer-events-none"></div>
           )}
 
           {/* Sidebar on mobile */}
           <div
-            className={`fixed inset-y-0 -left-6 p-7 flex flex-col gap-10 bg-white w-[70%] md:w-[50%] h-full ${
+            className={`fixed inset-y-0 -left-6 p-7 flex flex-col gap-10 bg-white w-[70%] md:w-[50%] h-full z-[100] ${
               isSidebarOpen ? "translate-x-0" : "-translate-x-full"
             } transition-transform duration-300 ease-in-out lg:translate-x-0 lg:bg-transparent lg:p-0 lg:w-auto lg:h-auto lg:static`}
           >

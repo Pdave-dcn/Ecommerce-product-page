@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# E-commerce Product Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is an e-commerce product page built with a mobile-first approach. It features a responsive design that adapts seamlessly to different screen sizes, ensuring an optimal user experience on both mobile and desktop devices.
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Desktop View
 
-## Expanding the ESLint configuration
+![Desktop View](./screenshots/desktop-design.jpg)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Desktop Lightbox
 
-- Configure the top-level `parserOptions` property like this:
+![Desktop lightbox](./screenshots/desktop-design-lightbox.jpg)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Mobile View
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![Mobile View](./screenshots/mobile-design.jpg)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Mobile Menu
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+![Mobile Menu](./screenshots/mobile-menu.jpg)
+
+## Features
+
+- **Responsive Design**: The layout adjusts to various screen sizes, providing a consistent experience across devices.
+- **Product Gallery**: Users can view product images and navigate through them using thumbnails and navigation buttons.
+- **Lightbox**: A lightbox feature allows users to view larger versions of the product images.
+- **Cart Functionality**: Users can add items to the cart, view the cart contents, and remove items from the cart.
+- **Quantity Management**: Users can increase or decrease the quantity of items before adding them to the cart.
+
+## Components
+
+- **Navbar**: Contains the navigation links and cart icon. The cart icon displays the number of items in the cart.
+- **Gallery**: Displays the main product image and thumbnails. Users can navigate through images and open a lightbox for a larger view.
+- **Description**: Provides details about the product, including the name, price, and a brief description.
+- **BuyingSection**: Allows users to select the quantity of the product and add it to the cart.
+
+## Technologies Used
+
+- **React**: For building the user interface.
+- **Tailwind CSS**: For styling the components.
+- **TypeScript**: For type safety and better development experience.
+
+## Folder Structure
+
+- **src/components**: Contains all the React components used in the project.
+- **src/components/types**: Contains TypeScript type definitions for the components.
+- **public/images**: Contains the images used in the project.
+
+## Mobile-First Approach
+
+This project was developed with a mobile-first approach, ensuring that the design and functionality are optimized for mobile devices before scaling up to larger screens. This approach helps in creating a more accessible and user-friendly experience for mobile users.
