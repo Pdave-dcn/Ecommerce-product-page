@@ -37,7 +37,7 @@ const BuyingSection = ({
       <button
         type="button"
         onClick={handleAddToCartBtn}
-        className="flex items-center justify-center p-6 lg:p-4 rounded-lg bg-orange shadow-xl shadow-paleOrange lg:shadow-none lg:w-[60%]"
+        className="flex items-center justify-center p-6 lg:p-4 rounded-lg bg-orange shadow-xl shadow-paleOrange active:opacity-65 lg:hover:opacity-75 lg:active:opacity-50 lg:shadow-none lg:w-[60%]"
       >
         <img
           src="images/icon-cart.svg"

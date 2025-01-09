@@ -48,16 +48,19 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
               onClick={() => toggleSideBar(false)}
             />
             <div className="flex flex-col gap-5 font-bold text-veryDarkBlue lg:flex-row lg:ml-8 lg:gap-8 lg:font-normal lg:text-darkGrayishBlue">
-              <span className="cursor-pointer">Collections</span>
-              <span className="cursor-pointer">Men</span>
-              <span className="cursor-pointer">Women</span>
-              <span className="cursor-pointer">About</span>
-              <span className="cursor-pointer">Contact</span>
+              {["Collections", "Men", "Women", "About", "Contact"].map(
+                (link) => (
+                  <div key={link} className="relative">
+                    <span className="cursor-pointer nav__link">{link}</span>
+                    <div className="hidden absolute w-full h-1 bg-orange -bottom-10 nav__link--underline"></div>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
 
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-5 md:space-x-8 lg:space-x-10">
           <div className="relative" onClick={toggleCart}>
             <img
               className="w-5 h-5 lg:w-6 lg:h-6 cursor-pointer"
@@ -92,7 +95,7 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
             )}
           </div>
           <img
-            className="w-7 lg:w-14 cursor-pointer"
+            className="w-7 md:w-10 lg:w-14 cursor-pointer rounded-full lg:hover:border-2 border-orange"
             src="images/image-avatar.png"
             alt="Profile image"
           />
