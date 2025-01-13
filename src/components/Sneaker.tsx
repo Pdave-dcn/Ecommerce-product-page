@@ -1,6 +1,15 @@
-import { SneakerType } from "./types/types";
+import { useContext } from "react";
+import { CartContext } from "../App";
 
-const Sneaker = ({ cartQty, setCartQty }: SneakerType) => {
+const Sneaker = () => {
+  const context = useContext(CartContext);
+
+  if (!context) {
+    throw new Error("CartContext must be used within a CartContext.Provider");
+  }
+
+  const { cartQty, setCartQty } = context;
+
   const calculateResult = (quantity: number): string => {
     return `$${(125 * quantity).toFixed(2)}`;
   };

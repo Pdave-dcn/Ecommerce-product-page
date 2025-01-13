@@ -1,3 +1,5 @@
+import { SetStateAction } from "react";
+
 export type PreviousNextBtnsType = {
   handlePreviousImage: () => void;
   handleNextImage: () => void;
@@ -23,12 +25,7 @@ export type BuyingSectionType = {
   setCartQty: (value: number) => void;
 };
 
-export type NavBarType = {
+export type CartContextType = {
   cartQty: number;
-  setCartQty: (value: number) => void;
-};
-
-export type SneakerType = {
-  cartQty: number;
-  setCartQty: (value: number) => void;
+  setCartQty: React.Dispatch<SetStateAction<number>>;
 };

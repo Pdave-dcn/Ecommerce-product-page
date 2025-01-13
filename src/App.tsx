@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import BuyingSection from "./components/BuyingSection";
 import Description from "./components/Description";
 import Gallery from "./components/GalleryComponent/Gallery";
 import Navbar from "./components/Navbar";
+import { CartContextType } from "./components/types/types";
+
+export const CartContext = createContext<CartContextType | null>(null);
 
 const App = () => {
   const [quantity, setQuantity] = useState(0);
@@ -10,7 +13,9 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center font-kumbhSans">
-      <Navbar cartQty={cartQty} setCartQty={setCartQty} />
+      <CartContext.Provider value={{ cartQty, setCartQty }}>
+        <Navbar />
+      </CartContext.Provider>
       <div className="lg:flex">
         <Gallery />
         <div className="lg:w-[40%]">

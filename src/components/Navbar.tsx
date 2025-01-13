@@ -1,10 +1,17 @@
-import { useState, useEffect } from "react";
-import { NavBarType } from "./types/types";
+import { useState, useEffect, useContext } from "react";
 import Sneaker from "./Sneaker";
-
-const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
+import { CartContext } from "../App";
+const Navbar = () => {
   const [display, setDisplay] = useState<"hidden" | "block">("hidden");
   const [isSidebarOpen, setIsSidebarOpen] = useState<true | false>(false);
+
+  const context = useContext(CartContext);
+
+  if (!context) {
+    throw new Error("CartContext must be used within a CartContext.Provider");
+  }
+
+  const { cartQty } = context;
 
   const toggleCart = () => {
     setDisplay((prevDisplay) =>
@@ -95,7 +102,7 @@ const Navbar = ({ cartQty, setCartQty }: NavBarType) => {
             </h1>
             {cartQty > 0 ? (
               <div className="flex flex-col w-full">
-                <Sneaker cartQty={cartQty} setCartQty={setCartQty} />
+                <Sneaker />
                 <button className="bg-orange p-4 font-bold rounded-lg mt-7 lg:mt-5">
                   Checkout
                 </button>
